@@ -8,7 +8,7 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.formacionbdi.springboot.app.zuul</groupId>
+	<groupId>com.formacionbdi.springboot.app.gatawey</groupId>
 	<artifactId>springboot-servicio-gateway-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-servicio-gateway-server</name>
