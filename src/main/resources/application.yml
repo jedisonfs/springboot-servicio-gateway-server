@@ -8,6 +8,12 @@ spring:
           - Path=/api/productos/**
         filters:
             - StripPrefix=2
+#            - EjemploCookie=Hola mi mensaje personalizado, usuario, JhonEdisonFeria
+            - name: Ejemplo
+              args: #Argumentos de la clase configuracion son los atributos de la clase Congifuracion
+                mensaje: Hola mi mensaje personalizado
+                cookieNombre: usuario
+                cookieValor: JhonEdison # Sebe colocar el valor de la cookie pegado ES UNA REGLA PARA QUE FUNCIONE
       - id: servicio-items
         uri: lb://servicio-items
         predicates:
