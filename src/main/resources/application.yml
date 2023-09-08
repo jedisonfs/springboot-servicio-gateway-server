@@ -2,21 +2,24 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: servicios-productos
+      - id: servicio-productos
         uri: lb://servicio-productos
         predicates:
           - Path=/api/productos/**
         filters:
             - StripPrefix=2
-#            - EjemploCookie=Hola mi mensaje personalizado, usuario, JhonEdisonFeria
-            - name: Ejemplo
-              args: #Argumentos de la clase configuracion son los atributos de la clase Congifuracion
-                mensaje: Hola mi mensaje personalizado
-                cookieNombre: usuario
-                cookieValor: JhonEdison # Sebe colocar el valor de la cookie pegado ES UNA REGLA PARA QUE FUNCIONE
+#            - name: Ejemplo
+#              args: #Argumentos de la clase configuracion son los atributos de la clase Congifuracion
+#                mensaje: Hola mi mensaje personalizado
+#               cookieNombre: usuario
+#                cookieValor: JhonEdison # Sebe colocar el valor de la cookie pegado ES UNA REGLA PARA QUE FUNCIONE
       - id: servicio-items
         uri: lb://servicio-items
         predicates:
           - Path=/api/items/**
         filters:
-          - StripPrefix=2 
+          - StripPrefix=2
+          - AddRequestHeader=token-request, 123456
+          - AddResponseHeader=token-response, 12345678
+          - AddResponseHeader=Content-Type, text/plain
+          - AddRequestParameter=nombre, andres
